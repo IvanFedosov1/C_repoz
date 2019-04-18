@@ -1,16 +1,16 @@
-#include<stdio.h>
+#include<stdio.h> //подключаем нужные библиотеки
 #include <math.h>
-main() {
-    int number, a, b, c = 1;
+main() {          //начинается главная функций
+    int number, a, b, c = 1;   //объявляем переменные целого типа
 
 
 
-    int z = 1;
+    int z = 1;     //программа заключена в цикл для возможности повторнго запуска от ввода пользователя
     while (z == 1) {
-        printf("enter two numbers a i b\n");
+        printf("enter two numbers a i b\n");   //получение данных от пользователя, сохранение их в переменные
         scanf("%d%d", &a, &b);
-        float af=a, bf=b, otvet;
-        printf("summ: 1\n");
+        float af=a, bf=b, otvet;            // поскольку степень которая возводиться функцией pow работает только с нецелыми числами добавляем нецелые переменные дублирующие наши
+        printf("summ: 1\n");               //вывод списка команд
         printf("razn: 2\n");
         printf("umnojenie: 3\n");
         printf("delenie: 4\n");
@@ -18,8 +18,8 @@ main() {
         printf("factorial(ot a): 6\n");
         printf("enter number of operation\n");
         scanf("%d", &number);
-        switch (number) {
-            case 1:
+        switch (number) {                          //сами операции заключены в переключатель sitch так как это для нас удобнее чем if else
+            case 1:                                //поскольку занимает существенно меньше места
                 printf("otvet %d\n", a + b);
                 break;
             case 2:
@@ -46,7 +46,7 @@ main() {
                 }
                 break;
         }
-        printf("restart: enter 1, exit: enter 2\n");
+        printf("restart: enter 1, exit: enter 2\n");    //цикл выполняется если z = 1 поэтому предлагается сбросить цикл просто изменением значения z
         scanf("%d", &z);
     }
 }
