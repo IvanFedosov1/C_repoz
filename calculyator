@@ -1,16 +1,15 @@
-#include<stdio.h> //подключаем нужные библиотеки
+#include<stdio.h>    //подключаем библиотеки
 #include <math.h>
-main() {          //начинается главная функций
-    int number, a, b, c = 1;   //объявляем переменные целого типа
+main() {
+    float a, b, c = 1, otvet;  //объявляем переменные
+    int number;
 
 
-
-    int z = 1;     //программа заключена в цикл для возможности повторнго запуска от ввода пользователя
-    while (z == 1) {
-        printf("enter two numbers a i b\n");   //получение данных от пользователя, сохранение их в переменные
-        scanf("%d%d", &a, &b);
-        float af=a, bf=b, otvet;            // поскольку степень которая возводиться функцией pow работает только с нецелыми числами добавляем нецелые переменные дублирующие наши
-        printf("summ: 1\n");               //вывод списка команд
+    int z = 1;
+    while (z == 1) {                         //программа заключена в цикл для возможности рестарта
+        printf("enter two numbers a i b\n");
+        scanf("%f%f", &a, &b);                //ввод и сохранение переменных
+        printf("summ: 1\n");
         printf("razn: 2\n");
         printf("umnojenie: 3\n");
         printf("delenie: 4\n");
@@ -18,21 +17,21 @@ main() {          //начинается главная функций
         printf("factorial(ot a): 6\n");
         printf("enter number of operation\n");
         scanf("%d", &number);
-        switch (number) {                          //сами операции заключены в переключатель sitch так как это для нас удобнее чем if else
-            case 1:                                //поскольку занимает существенно меньше места
-                printf("otvet %d\n", a + b);
+        switch (number) {         //выбор операции реализован переключаетелем switch так как в нашей ситуации это удобнее чем if else
+            case 1:               //поскольку занимает меньше кода
+                printf("otvet %f\n", a + b);
                 break;
             case 2:
-                printf("otvet %d\n", a - b);
+                printf("otvet %f\n", a - b);
                 break;
             case 3:
-                printf("otvet %d\n", a * b);
+                printf("otvet %f\n", a * b);
                 break;
             case 4:
-                printf("otvet %d\n", a / b);
+                printf("otvet %f\n", a / b);
                 break;
             case 5:
-                otvet =  pow(af, bf);
+                otvet =  pow(a, b);
                 printf("otvet %f\n", otvet);
                 break;
             case 6:
@@ -41,12 +40,12 @@ main() {          //начинается главная функций
                     a = a - 1;
                     if (a==0)
                     {
-                        printf("otvet %d\n", c);
+                        printf("otvet %f\n", c);
                     }
                 }
                 break;
         }
-        printf("restart: enter 1, exit: enter 2\n");    //цикл выполняется если z = 1 поэтому предлагается сбросить цикл просто изменением значения z
+        printf("restart: enter 1, exit: enter 2\n");
         scanf("%d", &z);
     }
 }
