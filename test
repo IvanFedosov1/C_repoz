@@ -1,0 +1,51 @@
+#include<stdio.h>    //подключаем библиотеки
+#include <math.h>
+main() {
+    float a, b, c = 1, otvet;  //объявляем переменные
+    int uslovie;
+
+
+    int e = 1;
+    while (e == 1) {                         //программа заключена в цикл для возможности рестарта
+        printf("vvedite 2 4isla\n");
+        scanf("%f%f", &a, &b);                //ввод и сохранение переменных
+        printf("slojenie 1\n");
+        printf("raznost 2\n");
+        printf("umnojenie 3\n");
+        printf("delenie 4\n");
+        printf("vozvedenie v stepen(a^b) 5\n");
+        printf("factorial ot 1 4isla 6\n");
+        printf("vvedite nomer operazii\n");
+        scanf("%d", &uslovie);
+        if (uslovie==1){
+                printf("otvet %f\n", a + b);
+        }
+        if (uslovie==2) {
+            printf("otvet %f\n", a - b);
+        }
+        if (uslovie==3) {
+            printf("otvet %f\n", a * b);
+        }
+        if (uslovie==4) {
+            printf("otvet %f\n", a / b);
+        }
+        if (uslovie==5) {
+            otvet = pow(a, b);
+            printf("otvet %f\n", otvet);
+        }
+        if (uslovie==6) {
+                while (a != 0)
+                {
+                    c = c * a;
+                    a = a - 1;
+                    if (a==0)
+                    {
+                        printf("otvet %f\n", c);
+                    }
+                }
+
+        }
+        printf("dlya restarta vvedite 1, dlya vihoda luboe drugoe 4islon");     //условие выполнения цикла это z = 1 если изменить её на любое другое число, цикл завершится
+        scanf("%d", &e);
+    }
+}
