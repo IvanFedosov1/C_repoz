@@ -1,0 +1,52 @@
+#include<stdio.h>
+#include <math.h>
+main() {
+    int number, a, b, c = 1;
+
+
+
+    int z = 1;
+    while (z == 1) {
+        printf("enter two numbers a i b\n");
+        scanf("%d%d", &a, &b);
+        float af=a, bf=b, otvet;
+        printf("summ: 1\n");
+        printf("razn: 2\n");
+        printf("umnojenie: 3\n");
+        printf("delenie: 4\n");
+        printf("stepen(a^b): 5\n");
+        printf("factorial(ot a): 6\n");
+        printf("enter number of operation\n");
+        scanf("%d", &number);
+        switch (number) {
+            case 1:
+                printf("otvet %d\n", a + b);
+                break;
+            case 2:
+                printf("otvet %d\n", a - b);
+                break;
+            case 3:
+                printf("otvet %d\n", a * b);
+                break;
+            case 4:
+                printf("otvet %d\n", a / b);
+                break;
+            case 5:
+                otvet =  pow(af, bf);
+                printf("otvet %f\n", otvet);
+                break;
+            case 6:
+                while (a != 0) {
+                    c = c * a;
+                    a = a - 1;
+                    if (a==0)
+                    {
+                        printf("otvet %d\n", c);
+                    }
+                }
+                break;
+        }
+        printf("restart: enter 1, exit: enter 2\n");
+        scanf("%d", &z);
+    }
+}
