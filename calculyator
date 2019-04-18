@@ -45,7 +45,7 @@ main() {
                 }
                 break;
         }
-        printf("restart: enter 1, exit: enter 2\n");
+        printf("restart: enter 1, exit: enter 2\n");     //условие выполнения цикла это z = 1 если изменить её на любое другое число, цикл завершится
         scanf("%d", &z);
     }
 }
