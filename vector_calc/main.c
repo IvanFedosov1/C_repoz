@@ -122,10 +122,7 @@ main() {
        }
        free(vector1);
        free(vector2);
-
-       return EXIT_SUCCESS;
-
-
+      
         }
     }
 }
