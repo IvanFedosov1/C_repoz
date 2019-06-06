@@ -54,7 +54,7 @@ char exit;
                         for (i = 0; i < num2; i++) {
                             result = result * num1;
                         }
-                        fprintf(out_file, "результат: %d ^ %d = %.0f \n", num1, num2,
+                        fprintf(out_file, "%d ^ %d = %.0f \n", num1, num2,
                                 result);
                         break;
 
@@ -69,7 +69,7 @@ char exit;
                                 result = result * i;
                             }
                         }
-                        fprintf(out_file, "результат: %d! = %.0f \n", num1, result);
+                        fprintf(out_file, "%d! = %.0f \n", num1, result);
                         break;
 
                     default:
