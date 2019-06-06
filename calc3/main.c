@@ -13,11 +13,11 @@ char exit;
         FILE *in_file; // дескриптор входного файла (откуда возьмем данные, с которыми будем работать)
         FILE *out_file; // дескриптор выходного файла (куда запишем результат)
 
-        in_file = fopen("input.txt","r");
-        out_file = fopen("output.txt", "w");
-        fscanf(in_file, "%c", &command_type);
-        fscanf(in_file, " %c", &operation_type);
-
+        in_file = fopen("input.txt","r");      //открываем файл для чтения инструкций
+        out_file = fopen("output.txt", "w");   // открываем файл для записи результата
+        fscanf(in_file, "%c", &command_type);    // считываем 1 символ который является операцией ('+', '-', '*', '^', '!', '/')
+        fscanf(in_file, " %c", &operation_type); // перед %c стоит пробел указывающий что нужно сдвинуться вправо при чтении
+                                                 // v - векторы s - простые числа
         switch (operation_type) {
 
             case 's': {
@@ -239,7 +239,7 @@ char exit;
                         break;
                 }
 
-                free(vector_1);
+                free(vector_1);   //освобождаем память 
                 free(vector_2);
                 free(vector_result);
                 break; // break относится к case 'v'
@@ -249,7 +249,7 @@ char exit;
                 puts("error: invalid data type.");
                 break;
         }
-        fclose(in_file);
+        fclose(in_file);  // закрываем файлы
         fclose(out_file);
 
         puts("The operation is comleted. Check the file output.txt in the program folder.\n Press 'q' for exit.");
