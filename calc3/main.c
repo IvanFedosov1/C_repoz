@@ -1,3 +1,9 @@
+/*
+main.c
+06.06.2019
+Author Ivan Fedosov
+*/
+
 #include <stdio.h>
 #include <locale.h>
 #include <stdlib.h>
