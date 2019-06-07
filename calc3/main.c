@@ -1,8 +1,3 @@
-/*
-main.c
-06.06.2019
-Author Ivan Fedosov
-*/
 
 #include <stdio.h>
 #include <locale.h>
@@ -16,14 +11,14 @@ char exit;
         puts("\n The perform the operation, click Enter.");
         scanf("%c",&exit);
         char operation_type, command_type;
-        FILE *in_file; // дескриптор входного файла (откуда возьмем данные, с которыми будем работать)
-        FILE *out_file; // дескриптор выходного файла (куда запишем результат)
+        FILE *in_file; 
+        FILE *out_file; 
 
-        in_file = fopen("input.txt","r");      //открываем файл для чтения инструкций
-        out_file = fopen("output.txt", "w");   // открываем файл для записи результата
-        fscanf(in_file, "%c", &command_type);    // считываем 1 символ который является операцией ('+', '-', '*', '^', '!', '/')
-        fscanf(in_file, " %c", &operation_type); // перед %c стоит пробел указывающий что нужно сдвинуться вправо при чтении
-                                                 // v - векторы s - простые числа
+        in_file = fopen("input.txt","r");      
+        out_file = fopen("output.txt", "w");  
+        fscanf(in_file, "%c", &command_type);    
+        fscanf(in_file, " %c", &operation_type);
+                                                
         switch (operation_type) {
 
             case 's': {
@@ -55,7 +50,7 @@ char exit;
                         break;
 
                     case '^':
-                        result = 1; // нужно задать значение result, чтобы не испортить первый шаг цикла
+                        result = 1;
 
                         for (i = 0; i < num2; i++) {
                             result = result * num1;
@@ -65,7 +60,7 @@ char exit;
                         break;
 
                     case '!':
-                        if (num1 == 0) // если number == 0, то факториал считать не нужно, ответ 1
+                        if (num1 == 0) 
                         {
                             result = 1;
                         } else // если number != 0
@@ -94,15 +89,15 @@ char exit;
 
             case 'v': {
 
-                float *vector_1; // указатель на первый вектор. В этой переменной хранится адрес начала массива
-                float *vector_2; // указатель на второй вектор. В этой переменной хранится адрес начала массива
-                float *vector_result; // указатель на вектор, содержащий результат. В этой переменной хранится адрес начала массива
-                int size = 0; // размер всех векторов. Прочитаем его из файла
+                float *vector_1; 
+                float *vector_2; 
+                float *vector_result; 
+                int size = 0; 
 
                 // выделяем память под векторы
-                vector_1 = calloc(size,sizeof(int)); // функция calloc выделяет память для вектора. size - количество элементов, sizeof(int) - размер одного элемента
-                vector_2 = calloc(size,sizeof(int)); // функция calloc выделяет память для вектора. size - количество элементов, sizeof(int) - размер одного элемента
-                vector_result = calloc(size,sizeof(float)); // функция calloc выделяет память для вектора. size - количество элементов, sizeof(int) - размер одного элемента
+                vector_1 = calloc(size,sizeof(int));
+                vector_2 = calloc(size,sizeof(int)); 
+                vector_result = calloc(size,sizeof(float)); 
                 fscanf(in_file, " %d", &size);
 
 
@@ -205,41 +200,7 @@ char exit;
                         }
                         fprintf(out_file,")");
                         break;}
-
-
-
-                    case '/':
-                    { //первая скобка
-                        fprintf(out_file,"(");
-                        for (int i = 0; i < size; i++) {
-                            fscanf(in_file, "%f", &vector_1[i]);
-                            fprintf(out_file," %.0f ", vector_1[i]);
-                        }
-                        fprintf(out_file,")");
-                        fprintf(out_file," / ");
-
-
-                        //вторая скобка
-                        fprintf(out_file,"(");
-                        for (int i = 0; i < size; i++) {
-                            fscanf(in_file, "%f", &vector_2[i]);
-                            fprintf(out_file," %.0f ", vector_2[i]);
-                        }
-                        fprintf(out_file,")");
-                        fprintf(out_file," = ");
-
-
-
-                        // результат
-                        fprintf(out_file,"( ");
-                        for (int i = 0; i < size; i++) {
-                            vector_result[i] = vector_1[i] / vector_2[i];
-                            fprintf(out_file,"%.0f", vector_result[i]);
-                            if (i != size - 1) fprintf(out_file," ");
-                        }
-                        fprintf(out_file," )");
-                        break;}
-
+               
                     default:
                         puts("error: invalid operation symbol, fix file and try again.");
                         break;
@@ -248,7 +209,7 @@ char exit;
                 free(vector_1);   //освобождаем память 
                 free(vector_2);
                 free(vector_result);
-                break; // break относится к case 'v'
+                break; 
             }
 
             default:
