@@ -1,9 +1,3 @@
-/*
- * main.c
- *
- *  Created on: 24 мая 2019 г.
- *      Author: anna
- */
 
 #include <stdio.h>
 
@@ -368,7 +362,7 @@ int main(void)
                         sprintf(line, "(%s) + (%s) = (%s) \n", vector_1_str, vector_2_str, vector_result_str);
                         //add_to_list(out_head, out_current, line);
                         LIST *out_node = malloc(sizeof(LIST));
-                        out_node->task = strdup(line); //note : strdup is not standard function
+                        out_node->task = strdup(line); //stdrdup функция создающая копию (нестандартная функция)
                         out_node->next = NULL;
 
                         if (out_head == NULL)
@@ -392,7 +386,7 @@ int main(void)
 
                         memset(line, 0, sizeof(line));
                         sprintf(line, "(%s) + (%s) = (%s) \n", vector_1_str, vector_2_str, vector_result_str);
-                        out_node->task = strdup(line); //note : strdup is not standard function
+                        out_node->task = strdup(line); //stdrdup функция создающая копию (нестандартная функция)
                         out_node->next = NULL;
 
                         if (out_head == NULL)
@@ -417,7 +411,7 @@ int main(void)
                         memset(line, 0, sizeof(line));
                         sprintf(line, "(%s) + (%s) = (%s) \n", vector_1_str, vector_2_str, vector_result_str);
                         //add_to_list(out_head, out_current, line);
-                        out_node->task = strdup(line); //note : strdup is not standard function
+                        out_node->task = strdup(line); //stdrdup функция создающая копию (нестандартная функция)
                         out_node->next = NULL;
 
                         if (out_head == NULL)
@@ -442,7 +436,7 @@ int main(void)
                         memset(line, 0, sizeof(line));
                         sprintf(line, "(%s) + (%s) = (%s) \n", vector_1_str, vector_2_str, vector_result_str);
                         //add_to_list(out_head, out_current, line);
-                        out_node->task = strdup(line); //note : strdup is not standard function
+                        out_node->task = strdup(line); //stdrdup функция создающая копию (нестандартная функция)
                         out_node->next = NULL;
 
                         if (out_head == NULL)
