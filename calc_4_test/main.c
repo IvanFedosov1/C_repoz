@@ -8,7 +8,7 @@
 #include <stdlib.h>
 #include <string.h>
 
-struct element // стру
+struct element 
 {
     char *task;
     struct element *next;
