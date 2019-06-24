@@ -1,4 +1,4 @@
-
+//created bi Ivan Fedosov
 #include <stdio.h>
 
 #include <locale.h>
